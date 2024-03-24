@@ -1,16 +1,12 @@
 import { PrismaClient } from "@prisma/client";
+import { crate } from "./cratePost";
+import { update } from "./update";
+import { deletePost } from "./delete";
 
 const prisma = new PrismaClient();
 
 const main = async () => {
-  // Create a new
-  // const result = await prisma.post.create({
-  //   data: {
-  //     title: "this is a test",
-  //     contant: "this is my first post2",
-  //     author: "Omar Faruk",
-  //   },
-  // });
+  
 
   // find all data
   const findMany = await prisma.post.findMany();
@@ -37,4 +33,6 @@ const main = async () => {
   console.log(findUnique);
 };
 
-main();
+// crate();
+// update()
+deletePost(2)
